@@ -1,4 +1,5 @@
 import {Form, Button} from 'react-bootstrap';
+import React, {useState} from 'react';
 
 const MyForm = props => {
 
@@ -61,7 +62,8 @@ const MyForm = props => {
     }
 
     return (
-        <Form onSubmit={handleSubmit} className="border w-50 p-5 rounded shadow">
+        <div>
+            <Form onSubmit={handleSubmit} className="border w-50 p-5 rounded shadow">
             <Form.Group>
                 <h2>Register:</h2>
             </Form.Group>
@@ -116,6 +118,14 @@ const MyForm = props => {
             }
         </Form.Group>
         </Form>
+        <h3>Your Data Here</h3>
+        <p>Name:{state.name.value}</p>
+        <p>Email:{state.email.value}</p>
+        <p>Password:{state.password.value}</p>
+        <p>Confirm Password:{state.confirmPassword.value}</p>
+        </div>
     )
+    
+    
 }
 export default MyForm
