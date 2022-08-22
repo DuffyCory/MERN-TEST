@@ -38,11 +38,11 @@
 }
 
 .completed{
-  text-decoration: none;
+  text-decoration: line-through;
 }
 
 .notCompleted{
-  text-decoration: line-through;
+  text-decoration: none;
 }
 
 

@@ -5,6 +5,7 @@ const List = (props) => {
     //deconstruct props from app.js
     const {todoList, setTodoList}=props;
 
+
 const clickHandler = (todo) => {
     todo.markedDelete = !todo.markedDelete;
     let updateTodos = [...todoList];
@@ -16,7 +17,7 @@ const styled = (markedDelete) => {
         return "completed"
     }
     else {
-        return "not completed"
+        return "notCompleted"
     }
 }
 
@@ -29,17 +30,16 @@ const deleteButton = (idFromBelow) => {
 
   return (
     <div>
-        <h2>List</h2>
+        <h2>List of To Do's</h2>
 
         {todoList.map((todo, index) => (
             <div className={styled(todo.markedDelete)} key={index}>
                 <p>{todo.content}</p>
                 <input onChange={(e)=>clickHandler(todo)} type="checkbox" />
-                <button onClick={() => deleteButton(todo.id)}>Delete</button>
+                <button onClick={(e) =>deleteButton(todo.id)}>Delete</button>
             </div>
             ))
-        }
-        
+        }   
     </div>
   )
 }

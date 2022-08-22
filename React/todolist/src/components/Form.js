@@ -17,7 +17,8 @@ const Form = (props) => {
         
         setTodoList([...todoList, {
             content: todoText,
-            markedDelete: false
+            markedDelete: false,
+            id: Math.floor(Math.random() * 1000000)
         }])
 
         setTodoText("");
@@ -26,6 +27,7 @@ const Form = (props) => {
 
   return (
     <div>
+        <h2>To Do Items</h2>
         <form onSubmit={submitHandler}>
             <div style={styledDiv}>
                 <input value={todoText} onChange={(e) =>setTodoText(e.target.value)} type="text"/>
