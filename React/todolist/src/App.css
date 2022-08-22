@@ -37,4 +37,12 @@
   }
 }
 
+.completed{
+  text-decoration: none;
+}
+
+.notCompleted{
+  text-decoration: line-through;
+}
+
 

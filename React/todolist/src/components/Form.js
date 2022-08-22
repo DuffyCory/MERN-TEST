@@ -7,31 +7,30 @@ const styledDiv = {
 }
 
 const Form = (props) => {
-    const {todoList, setTodoList} = props
-    const [todo, setTodo] = useState ({})
+    //deconstructed for props from app.js
+    const {todoList, setTodoList} = props;
+    //state for text input
+    const [todoText, setTodoText] = useState ("");
 
     const submitHandler = (e) => {
-        e.preventDefault()
-        //validator- removes white spaces
-        if(todo.todo.trim() === "")
-            return
-    }
-    setTodoList([])
+        e.preventDefault();
+        
+        setTodoList([...todoList, {
+            content: todoText,
+            markedDelete: false
+        }])
 
-
-    const inputHandler = (e) => {
-        //you could add validator here
-        setTodo({todo:e.target.value,completed:false})
+        setTodoText("");
     }
+
 
   return (
-    <div style={styledDiv}>
+    <div>
         <form onSubmit={submitHandler}>
-            <div>
-                <label htmlFor="">Todo:</label>
-                <input value= {todo.todo} onChange={inputHandler} type="text" />
+            <div style={styledDiv}>
+                <input value={todoText} onChange={(e) =>setTodoText(e.target.value)} type="text"/>
+                <button>Submit</button>
             </div>
-            <div><button>Submit</button></div>    
         </form>
     </div>
   )
