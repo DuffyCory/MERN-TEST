@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
  
-mongoose.connect('mongodb://localhost/joker_api', {
+mongoose.connect('mongodb://localhost/jokes_video_walkthrough', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })

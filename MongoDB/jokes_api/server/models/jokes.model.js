@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 
-//creates blueprint for db object
 const JokeSchema = new mongoose.Schema({
     setup: String,
     punchline: String,
