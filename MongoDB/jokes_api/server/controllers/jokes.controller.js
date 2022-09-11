@@ -37,7 +37,7 @@ const deleteJoke = (req, res) => {
 
 module.exports = {
     getAllJokes,
-    getJokesById,
+    getJokeById,
     createNewJoke,
     updateJoke,
     deleteJoke,
