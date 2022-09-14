@@ -8,11 +8,11 @@ const ProductForm = (props) => {
     const [price, setPrice] = useState("");
     
     //handler when the form is submitted
-    const onSubmitHandler = (e) => {
+    const SubmitHandler = (e) => {
         //prevent default behavior of the submit
         e.preventDefault();
         //make a post request to create a new person
-        axios.post('http://localhost:8000/api/products', {
+        axios.post("http://localhost:8000/api/products", {
             title,
             description,
             price,
@@ -30,10 +30,10 @@ const ProductForm = (props) => {
     return (
         <div>
             <header>Product Manager</header>
-            <form onSubmit={onSubmitHandler}>
+            <form onSubmit={SubmitHandler}>
                 <p>
                     <label>Title</label><br />
-                    <input type="text" value={title} name="title" onChange={(e) => setTitle(e.target.value)} />
+                    <input onChange={(e) => setTitle(e.target.value)} type="text" value={title} name="title" />
                 </p>
                 <p>
                     <label>Description</label><br />
@@ -43,7 +43,7 @@ const ProductForm = (props) => {
                     <label>Price</label><br />
                     <input type="number" value={price} name="price" onChange={(e) => setPrice(e.target.value)} />
                 </p>
-                <input type="submit" value="Create" />
+                <input type="submit" value="Create" className="submit-input" />
             </form>
         </div>
     )
