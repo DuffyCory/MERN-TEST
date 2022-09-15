@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios';
 
 const ProductForm = (props) => {
+
+    const {productList, setProductList} = props;
     //Setting State - keep track of what is being typed via useState hook
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -20,6 +22,7 @@ const ProductForm = (props) => {
             .then((res) => {
                 console.log(res); // always console log to get used to tracking your data!
                 console.log(res.data);
+                setProductList([...productList, res.data])
                 setTitle("");
                 setDescription("");
                 setPrice(""); //these clear out the input boxes after you click submit
