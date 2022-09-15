@@ -23,6 +23,23 @@ module.exports = {
         .catch((err) => console.log(err))
 },
 
+    updateProduct: (req, res) => {
+        Product.findOneAndUpdate({_id: req.params.id}, req.body,
+            {new: true, runValidators: true})
+            .then((updatedProduct) => {
+                res.json(updatedProduct);
+            })
+            .catch((err) => console.log(err));
+    },
+
+    deleteProduct: (req, res) => {
+        Product.deleteOne({_id: req.params.id})
+        .then((deletedProduct) => {
+            res.json(deletedProduct);
+        })
+        .catch((err) => console.log(err));
+    }
+
 };
 
     
