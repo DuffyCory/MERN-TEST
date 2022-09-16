@@ -32,5 +32,28 @@ const getOnePet = (req, res) => {
     });
 }
 
+const updatePet = (req, res) => {
+    Pet.findOneAndUpdate({_id: req.params.id}, req.body, {
+        new: true,
+        runValidators: true,
+    })
+    .then((updatedPet) => {
+        res.json({updatedPet});
+    })
+    .catch((err) => {
+        res.status(400).json({err});
+    });
+}
 
-module.exports = { createNewPet, getAllPets, getOnePet };
+const deletePet = (req, res) => {
+    Pet.deleteOne({_id: req.params.id})
+    .then((deletedPet) => {
+        res.json({deletedPet})
+    })
+    .catch((err) => {
+        res.status(400).json({err});
+    });
+}
+
+
+module.exports = { createNewPet, getAllPets, getOnePet, updatePet, deletePet };
