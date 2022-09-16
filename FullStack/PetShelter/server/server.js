@@ -6,7 +6,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended:true }));
 require('./config/mongoose.config');
-//require('./routes/pet.routes')(app);
+require('./routes/pet.routes')(app);
 
 
 
