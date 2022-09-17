@@ -5,8 +5,8 @@ import Table from 'react-bootstrap/Table';
 import { Link } from 'react-router-dom';
 
 
-const DisplayAll = (props) => {
-    const [allPets, setAllPets] = useState([])
+const DisplayAll = () => {
+    const [allPets, setAllPets] = useState([]);
     useEffect(() => {
         axios.get("http://localhost:8000/api/pet")
             .then((response) => {
@@ -17,6 +17,8 @@ const DisplayAll = (props) => {
                 console.log(err.response);
             })
     }, []);
+
+
 
 
     return (
@@ -49,4 +51,4 @@ const DisplayAll = (props) => {
     )
 }
 
-export default DisplayAll
+export default DisplayAll;
