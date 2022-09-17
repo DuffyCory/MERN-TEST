@@ -88,4 +88,4 @@ const NewPetForm = (props) => {
     )
 }
 
-export default NewPetForm
+export default NewPetForm;
