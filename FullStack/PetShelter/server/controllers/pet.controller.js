@@ -15,7 +15,7 @@ const createNewPet = (req, res) => {
 const getAllPets = (req, res) => {
     Pet.find()
     .then((allPets) => {
-        res.json({allPets});
+        res.json(allPets);
     })
     .catch((err) => {
         res.status(400).json({err});
@@ -25,7 +25,7 @@ const getAllPets = (req, res) => {
 const getOnePet = (req, res) => {
     Pet.findOne({_id: req.params.id})
     .then((onePet) => {
-        res.json({onePet});
+        res.json(onePet);
     })
     .catch((err) => {
         res.status(400).json({err});

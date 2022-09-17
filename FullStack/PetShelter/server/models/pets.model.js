@@ -16,7 +16,10 @@ const PetsSchema = {
         required: [true, 'Description is required'],
         minLength: [3, 'Description must be at least 3 characters long'],
     },
-    //skills might go here?
+    skills: {
+        type: String,
+    },
+    
 };
 
 module.exports = mongoose.model("Pet", PetsSchema);
