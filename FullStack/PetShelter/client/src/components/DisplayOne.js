@@ -36,7 +36,6 @@ const DisplayOne = (props) => {
                 return pet._id !== petId;
             });
             setOnePet(newList)
-            navigate("/");
         })
         .catch((err)=> console.log(err))
     }
@@ -59,7 +58,7 @@ const DisplayOne = (props) => {
                     <tr key={id}>
                         <td>{onePet.type}</td>
                         <td>{onePet.description}</td>
-                        <td>{onePet.skill1}</td>
+                        <td>1.{onePet.skill1} / 2.{onePet.skill2} / 3.{onePet.skill3}</td>
                         <button onClick={()=>deleteHandler(id)} >Adopt</button>
                     </tr>   
                 </tbody>
