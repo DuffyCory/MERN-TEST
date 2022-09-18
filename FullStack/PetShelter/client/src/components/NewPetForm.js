@@ -41,7 +41,7 @@ const NewPetForm = (props) => {
             description,
             skill1,
             skill2,
-            skill3
+            skill3,
         })
             .then((response) => {
                 console.log(response);
@@ -80,7 +80,7 @@ const NewPetForm = (props) => {
                 {errors.description ? <p className="errorText">{errors.description.message}</p> : null}
 
                 <Row className="mb-3">
-                    <Form.Group as={Col} controlId="skills">
+                    <Form.Group as={Col} controlId="formSkills">
                         <p>Skills (Optional)</p>
                         <Form.Label>Skill 1: </Form.Label>
                         <Form.Control type="skill1" onChange={(e)=> setSkill1(e.target.value)}/>

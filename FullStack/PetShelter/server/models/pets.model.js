@@ -16,7 +16,13 @@ const PetsSchema = {
         required: [true, 'Description is required'],
         minLength: [3, 'Description must be at least 3 characters long'],
     },
-    skills: {
+    skill1: {
+        type: String,
+    },
+    skill2: {
+        type: String,
+    },
+    skill3: {
         type: String,
     },
     
