@@ -37,13 +37,14 @@ const DisplayAll = (props) => {
 
     return (
         <div>
+            <Link to="/new">Add a Pet to the Shelter</Link>
+            <h3>These pets are looking for a good home</h3>
             <Table striped bordered hover>
                 <thead>
                     <tr>
                         <th>Pet Name</th>
                         <th>Type of Animal</th>
-                        <th>Description</th>
-                        <th>Skills</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,8 +53,7 @@ const DisplayAll = (props) => {
                             <tr key={pet._id}>
                                 <td>{pet.name}</td>
                                 <td>{pet.type}</td>
-                                <td>{pet.description}</td>
-                                <td>{pet.skills}</td>
+                                <Link to={`/pet/${pet._id}`}><button>Details</button></Link>
                                 <Link to={`/edit/${pet._id}`}><button>Edit</button></Link>
                                 <button onClick={()=>deleteHandler(pet._id)} >Adopt</button>
                             </tr>

@@ -29,7 +29,9 @@ const NewPetForm = (props) => {
     const [name, setName] = useState("");
     const [type, setType] = useState("");
     const [description, setDescription] = useState("");
-    const [skills, setSkills] = useState("");
+    const [skill1, setSkill1] = useState("");
+    const [skill2, setSkill2] = useState("");
+    const [skill3, setSkill3] = useState("");
 
     const submitHandler = (e) => {
         e.preventDefault();
@@ -37,7 +39,9 @@ const NewPetForm = (props) => {
             name,
             type,
             description,
-            skills
+            skill1,
+            skill2,
+            skill3
         })
             .then((response) => {
                 console.log(response);
@@ -52,7 +56,8 @@ const NewPetForm = (props) => {
 
     return (
         <div>
-            <Link to="/">Home</Link>
+            <Link to="/">Back to Home</Link>
+            <h3>Know a pet needing a home?</h3>
             <Form onSubmit={submitHandler}>
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="formPetName">
@@ -76,8 +81,13 @@ const NewPetForm = (props) => {
 
                 <Row className="mb-3">
                     <Form.Group as={Col} controlId="skills">
-                        <Form.Label>Skills </Form.Label>
-                        <Form.Control type="skills" onChange={(e)=> setSkills(e.target.value)}/>
+                        <p>Skills (Optional)</p>
+                        <Form.Label>Skill 1: </Form.Label>
+                        <Form.Control type="skill1" onChange={(e)=> setSkill1(e.target.value)}/>
+                        <Form.Label>Skill 2: </Form.Label>
+                        <Form.Control type="skill2" onChange={(e)=> setSkill2(e.target.value)}/>
+                        <Form.Label>Skill 3: </Form.Label>
+                        <Form.Control type="skill3" onChange={(e)=> setSkill3(e.target.value)}/>
                     </Form.Group>
                 </Row>
                 <Button variant="primary" type="submit">
