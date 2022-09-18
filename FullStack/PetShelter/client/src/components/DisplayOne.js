@@ -2,6 +2,7 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
 
@@ -45,7 +46,7 @@ const DisplayOne = (props) => {
 
     return (
         <div>
-            <h3>Details about {onePet.name}</h3><Link to="/">Back to Home</Link>
+            <h3>Details about: {onePet.name}</h3><Link to="/">Back to Home</Link>
             <Table striped bordered hover>
                 <thead>
                     <tr>
@@ -59,7 +60,7 @@ const DisplayOne = (props) => {
                         <td>{onePet.type}</td>
                         <td>{onePet.description}</td>
                         <td>1.{onePet.skill1} / 2.{onePet.skill2} / 3.{onePet.skill3}</td>
-                        <button onClick={()=>deleteHandler(id)} >Adopt</button>
+                        <button onClick={()=>deleteHandler(id)} >Adopt</button> - {onePet.name}
                     </tr>   
                 </tbody>
             </Table>
