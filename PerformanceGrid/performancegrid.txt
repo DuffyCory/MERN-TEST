@@ -1,0 +1,22 @@
+Performance Grid Overview.
+
+Porject will be using the MERN stack.
+
+
+Basic user Sign-in/Registration page ('/') with validations.
+
+From there they will be directed to the dashboard page. It will autopopulate with their last input or be blank for new users.
+If they are returning the date of the last update will also be shown on the screen so they can compare.
+*The exercises will have Link's that will take them to a page that describes the exercises/tests.
+
+Once they enter their data they will be taken to their performance grid.This is where I will be out of my comfort zone and could use help.
+I plan to take the data they entered and run it through an algorithm to come up with an index score.
+Thise index scores will then be used in a radar/spider graph.
+I also plan to have Link's that will take them to pages that will have information on how to improve their scores.
+
+The page with the exercise/test descriptions will have basic descriptions and a link to a YouTube video for each exercise.
+
+The performance recommendation page will have basic recommendations and a button to a page where they can purchase a specific program to help them.
+
+
+GitHub Link:
