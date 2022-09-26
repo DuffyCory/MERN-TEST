@@ -19,4 +19,4 @@ The page with the exercise/test descriptions will have basic descriptions and a 
 The performance recommendation page will have basic recommendations and a button to a page where they can purchase a specific program to help them.
 
 
-GitHub Link:
+GitHub Link: https://github.com/DuffyCory/MERN-TEST/tree/master/PerformanceGrid
